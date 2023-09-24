@@ -7,6 +7,7 @@
         <div class="fund-card__header">
             <div class="fund-card__title">
                 <!-- fund title -->
+                {{ fund.name }}
             </div>
         </div>
         <div class="fund-card__body">
