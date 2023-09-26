@@ -12,15 +12,7 @@
           </CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink href="#">Link</CNavLink>
-        </CNavItem>
-        <CDropdown togglerText="Dropdown" variant="nav-item">
-          <CDropdownItem href="#">View Funds</CDropdownItem>
-        </CDropdown>
-        <CNavItem>
-          <CNavLink href="#" disabled>
-            Disabled
-          </CNavLink>
+          <button :click="{redirectToLogin}">Logout</button>
         </CNavItem>
       </CHeaderNav>
       <!-- <form class="d-flex">
@@ -37,6 +29,11 @@
       return { 
         visible: false,
       }
+    },
+    method: {
+        redirectToLogin() {
+            window.navigate('/login');
+        }
     }
   }
 </script>
@@ -46,6 +43,7 @@
     }
 
     CCollapse {
+        margin-left: 50vw;
         position: right;
     }
 </style>
