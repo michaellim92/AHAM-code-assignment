@@ -4,15 +4,23 @@ import Header from './components/shared/Header.vue';
 </script>
 
 <template>
-  <main class="w-full">
+<div>
   <Header />
+  <main class="w-100">
     <FundsView />
   </main>
+</div>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
+}
+
+main {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {

@@ -12,9 +12,10 @@
         methods: {
            async getFunds() {
                 try {
-                    const response = await fetch('/api/funds');
-                    this.funds = await response.json();
-                    console.log(this.funds)
+                    const fetchFundsData = await fetch('/api/funds');
+                    const response = await fetchFundsData.json();
+                    this.funds = JSON.parse(JSON.stringify(response));
+                    console.log('view funds', JSON.parse(JSON.stringify(response)))
                 } catch (error) {
                     console.error(error);
                 }
@@ -32,10 +33,15 @@
 <template>
     <div class="fund-view__wrapper w-full mb-1.5">
         <!-- should loop through data and show FundCard for each -->
-        <div> I am fund view</div>
+        <div>
+            <div class="text-2xl">
+                <strong>{{ funds.length || 0 }}&nbsp;</strong>
+                <span>available for investing.</span>
+            </div>
+        </div>
         <div class="">
-            <div v-for="product in funds" :key="product.id" class="product-card"
-                <FundCard :fund="product"/>
+            <div v-for="product in funds" :key="product.id" class="product-card">
+                <FundCard fund="product"/>
             </div>
         </div>
     </div>

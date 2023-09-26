@@ -8,6 +8,9 @@
                 type: Object
             }
         },
+        created() {
+            console.log('nested child',this.fund)
+        }
     }
 </script>
 
