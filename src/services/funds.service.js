@@ -1,11 +1,10 @@
 import { createServer } from "miragejs"
 
-export function makeServer() {
-  let server = createServer({
+function makeServer() {
+  createServer({
     routes() {
-      this.namespace = "api"
-
-      this.get("/funds", () => {
+      this.get("/api/funds", () => {
+        console.log('server online')
         let funds = []
         for (let i = 0; i < 15; i++) {
           funds.push({
@@ -21,6 +20,6 @@ export function makeServer() {
       })
     },
   })
-
-  return server
 }
+
+export {makeServer};

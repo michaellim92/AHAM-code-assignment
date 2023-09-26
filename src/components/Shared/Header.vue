@@ -3,13 +3,13 @@
 </script>
 
 <template>
-    <div>
+    <div class="flex-inline">
         <div class="logo">
         AHAM
         </div>
         <div class="navigation-bar">
             <div class="navigation-tab">
-                <a href="">View Funds</a>
+                <a href="/investor/funds">View Funds</a>
             </div>
         </div>
     </div>
