@@ -24,6 +24,7 @@
     "@types/jsdom": "^21.1.2",
     "@types/node": "^18.17.15",
     "@vitejs/plugin-vue": "^4.3.4",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/test-utils": "^2.4.1",
