@@ -10,12 +10,17 @@
         },
         created() {
             console.log('nested child',this.fund)
+        },
+        data() {
+            return {
+                fund: null
+            }
         }
     }
 </script>
 
 <template>
-    <div class="fund-card__wrapper w-full">
+    <div class="fund-card__wrapper w-full mb-3 px-5">
         <div class="fund-card__header">
             <div class="fund-card__title">
                 <!-- fund title -->
@@ -26,10 +31,12 @@
         <div class="fund-card__body">
             <div class="fund-card__details">
                 <!-- <div class="text-2xl">{{ fund.description }}</div> -->
+                <div>description</div>
+                <div>investment type</div>
                 <!-- details (name, description, investment type, performance, current asset value) -->
             </div>
         </div>
-        <div class="fund-card__footer">
+        <div class="fund-card__footer justify-items-center">
             <button class="button-invest rounded-full">Invest Now</button>
         </div>
     </div>

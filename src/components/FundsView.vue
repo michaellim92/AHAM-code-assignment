@@ -14,8 +14,9 @@
                 try {
                     const fetchFundsData = await fetch('/api/funds');
                     const response = await fetchFundsData.json();
+                    console.log('response', response)
                     this.funds = JSON.parse(JSON.stringify(response));
-                    console.log('view funds', JSON.parse(JSON.stringify(response)))
+                    console.log('funds', this.funds)
                 } catch (error) {
                     console.error(error);
                 }
@@ -41,7 +42,7 @@
         </div>
         <div class="">
             <div v-for="product in funds" :key="product.id" class="product-card">
-                <FundCard fund="product"/>
+                <FundCard v-bind:fund="product"/>
             </div>
         </div>
     </div>

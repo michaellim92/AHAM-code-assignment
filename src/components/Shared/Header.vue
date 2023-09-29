@@ -24,6 +24,7 @@
 </CHeader>
 </template>
 <script>
+import { CHeader } from '@coreui/vue'
   export default {
     data() {
       return { 
@@ -32,14 +33,28 @@
     },
     method: {
         redirectToLogin() {
-            window.navigate('/login');
+            const routes = {
+              '/': Home,
+              '/login': Logout
+            }
+            const currentPath = ref(window.location.hash)
+
+            window.addEventListener('hashchange', () => {
+              currentPath.value = window.location.hash
+            })
+
+            const currentView = computed(() => {
+              return routes[currentPath.value.slice(1) || '/'] || NotFound
+            })
         }
-    }
+      }
   }
 </script>
 <style scoped>
     CHeader {
         width: 100vw;
+        position: sticky;
+
     }
 
     CCollapse {

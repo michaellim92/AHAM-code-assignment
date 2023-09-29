@@ -16,7 +16,7 @@ function makeServer() {
             currentNetAssetValue: Math.floor(Math.random() * 1000)
           })
         }
-        return funds
+        return JSON.parse(JSON.stringify(funds))
       })
     },
   })
