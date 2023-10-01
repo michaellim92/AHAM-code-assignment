@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import FundsView from './components/FundsView.vue';
+import FundsView from './components/fund-viewer/FundsView.vue';
 import Header from './components/shared/Header.vue';
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-<div>
-  <Header />
-  <main class="w-100">
-    <FundsView />
+  <main class="flex flex-col justify-center">
+    <Header />
+    <div class="web__body px-10">
+      <RouterView />
+    </div>
   </main>
-</div>
 </template>
 
 <style scoped>
@@ -17,15 +18,9 @@ header {
   line-height: 1.5;
 }
 
-main {
-  width: 80vw;
-  display: flex;
-  justify-content: center;
-}
-
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0;
 }
 
 @media (min-width: 1024px) {
@@ -43,6 +38,7 @@ main {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    width: calc(100vw - (100vw - 100%));
   }
 }
 </style>

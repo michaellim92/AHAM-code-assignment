@@ -1,18 +1,20 @@
 
 <template>
-<CHeader>
+<CHeader class="sticky top-0 bg-slate-800	 p-6 shadow-lg">
   <CContainer fluid>
     <CHeaderBrand href="#">AHAM - Affin Hwang Asset Management</CHeaderBrand>
     <CHeaderToggler @click="visible = !visible" />
     <CCollapse class="header-collapse" :visible="visible">
-      <CHeaderNav>
+      <CHeaderNav class="items-center gap-x-4 flex-1">
         <CNavItem>
-          <CNavLink href="#" active>
+          <router-link to="/" active>
+          <strong>
             Home
-          </CNavLink>
+          </strong>
+          </router-link>
         </CNavItem>
         <CNavItem>
-          <button :click="{redirectToLogin}">Logout</button>
+          <router-link :to="{ name: 'browse' }">Logout</router-link>
         </CNavItem>
       </CHeaderNav>
       <!-- <form class="d-flex">
@@ -31,23 +33,6 @@ import { CHeader } from '@coreui/vue'
         visible: false,
       }
     },
-    method: {
-        redirectToLogin() {
-            const routes = {
-              '/': Home,
-              '/login': Logout
-            }
-            const currentPath = ref(window.location.hash)
-
-            window.addEventListener('hashchange', () => {
-              currentPath.value = window.location.hash
-            })
-
-            const currentView = computed(() => {
-              return routes[currentPath.value.slice(1) || '/'] || NotFound
-            })
-        }
-      }
   }
 </script>
 <style scoped>

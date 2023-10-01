@@ -9,10 +9,9 @@ import '@coreui/coreui/dist/css/coreui.min.css'
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
+  max-width: auto;
+  margin: 0;
+  overflow: hidden;
   font-weight: normal;
 }
 
@@ -38,6 +37,5 @@ a,
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }

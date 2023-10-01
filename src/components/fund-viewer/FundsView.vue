@@ -32,7 +32,7 @@
 </script>
 
 <template>
-    <div class="fund-view__wrapper w-full mb-1.5">
+    <div class="fund-view__wrapper w-full mb-1.5 px-10">
         <!-- should loop through data and show FundCard for each -->
         <div>
             <div class="text-2xl">
@@ -42,7 +42,7 @@
         </div>
         <div class="">
             <div v-for="product in funds" :key="product.id" class="product-card">
-                <FundCard v-bind:fund="product"/>
+                <FundCard v-bind="product"/>
             </div>
         </div>
     </div>

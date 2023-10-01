@@ -1,15 +1,28 @@
 <script>
     import {ref} from 'vue';
+    import { RouterLink } from 'vue-router'
 
     export default {
         name: 'FundCard',
         prop: {
-            fund: {
-                type: Object
-            }
+            id: {
+                type: Number
+            },
+            name: {
+                type: String
+            },
+            currentNetAssetValue: {
+                type: Number
+            },
+            description: {
+                type: String
+            },
+            performanceHistory: {
+                type: Number
+            },
         },
         created() {
-            console.log('nested child',this.fund)
+            console.log('nested child', this.fund)
         },
         data() {
             return {
@@ -20,7 +33,7 @@
 </script>
 
 <template>
-    <div class="fund-card__wrapper w-full mb-3 px-5">
+    <div class="fund-card__wrapper w-9/12 mb-3 px-5">
         <div class="fund-card__header">
             <div class="fund-card__title">
                 <!-- fund title -->
@@ -37,7 +50,9 @@
             </div>
         </div>
         <div class="fund-card__footer justify-items-center">
-            <button class="button-invest rounded-full">Invest Now</button>
+            <router-link to="/payments">
+                Invest Now
+            </router-link>
         </div>
     </div>
 </template>
